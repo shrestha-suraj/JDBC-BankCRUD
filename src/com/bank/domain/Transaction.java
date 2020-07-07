@@ -28,4 +28,7 @@ public class Transaction {
     public AccountType getAccountType() {
         return accountType;
     }
+    public String toString(){
+        return "Transaction Id: "+id+", amount: "+amount+", accountType: "+accountType+", bankName: "+account.getBank().getName()+", patronName: "+account.getPatron().getName();
+    }
 }

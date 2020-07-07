@@ -89,3 +89,5 @@ INSERT INTO address_patron_relationship VALUES (1,1,1);
 INSERT INTO address_patron_relationship VALUES (2,2,2);
 INSERT INTO address_patron_relationship VALUES (3,3,3);
 -- --------------------------------------------------
+
+SELECT * FROM Transaction INNER JOIN Account ON Transaction.account_id=Account.id INNER JOIN Bank ON Account.bank_id=Bank.id INNER JOIN Patron ON Account.patron_id=Patron.id WHERE Transaction.id=1;
