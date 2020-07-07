@@ -17,6 +17,9 @@ public class BankRepository {
         DbConnection dbConnection=new DbConnection();
         connection=dbConnection.createConnection();
     }
+    public BankRepository(Connection connection){
+        this.connection=connection;
+    }
     /*This method works*/
     public Result add(Patron patron){
         queryString="INSERT INTO Patron VALUES (?,?,?)";
