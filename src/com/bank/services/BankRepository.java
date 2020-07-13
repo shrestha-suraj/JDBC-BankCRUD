@@ -29,7 +29,7 @@ public class BankRepository {
             preparedStatement.setString(2,patron.getName());
             preparedStatement.setBlob(3,new ByteArrayInputStream(patron.getImage()));
             queryResult=preparedStatement.executeUpdate();
-            return queryResult>0?Result.SUCCESS:Result.FAILURE;
+            return Result.SUCCESS;
         }catch (SQLException e){
             System.out.println(e.getMessage());
         }
@@ -44,7 +44,7 @@ public class BankRepository {
             preparedStatement.setString(2,patron.getName());
             preparedStatement.setBlob(3,new ByteArrayInputStream(patron.getImage()));
             queryResult=preparedStatement.executeUpdate();
-            return queryResult>0?Result.SUCCESS:Result.FAILURE;
+            return Result.SUCCESS;
         }catch (SQLException e){
             System.out.println(e.getMessage());
         }
@@ -59,7 +59,7 @@ public class BankRepository {
             preparedStatement.setBlob(2,new ByteArrayInputStream(patron.getImage()));
             preparedStatement.setInt(3,patron.getId());
             queryResult=preparedStatement.executeUpdate();
-            return queryResult>0?Result.SUCCESS:Result.FAILURE;
+            return Result.SUCCESS;
         }catch (SQLException e){
             System.out.println(e.getMessage());
         }
@@ -105,7 +105,6 @@ public class BankRepository {
             System.out.println(e.getMessage());
         }
         return patronList;
-
     }
     /* This method works */
     public Result transact(Transaction transaction){
@@ -117,7 +116,7 @@ public class BankRepository {
             preparedStatement.setDouble(3,transaction.getAmount());
             preparedStatement.setString(4,transaction.getAccountType().toString());
             queryResult=preparedStatement.executeUpdate();
-            return queryResult>0?Result.SUCCESS:Result.FAILURE;
+            return Result.SUCCESS;
         }catch(SQLException e){
             System.out.println(e.getMessage());
         }
@@ -160,7 +159,7 @@ public class BankRepository {
             preparedStatement.setInt(1,bank.getId());
             preparedStatement.setString(2,bank.getName());
             queryResult=preparedStatement.executeUpdate();
-            return queryResult>0?Result.SUCCESS:Result.FAILURE;
+            return Result.SUCCESS;
         }catch (SQLException e){
             System.out.println(e.getMessage());
         }
@@ -174,7 +173,7 @@ public class BankRepository {
             preparedStatement.setInt(1,bank.getId());
             preparedStatement.setString(2,bank.getName());
             queryResult=preparedStatement.executeUpdate();
-            return queryResult>0?Result.SUCCESS:Result.FAILURE;
+            return Result.SUCCESS;
         }catch (SQLException e){
             System.out.println(e.getMessage());
         }
@@ -188,7 +187,7 @@ public class BankRepository {
             preparedStatement.setString(1,bank.getName());
             preparedStatement.setInt(2,bank.getId());
             queryResult=preparedStatement.executeUpdate();
-            return queryResult>0?Result.SUCCESS:Result.FAILURE;
+            return Result.SUCCESS;
         }catch (SQLException e){
             System.out.println(e.getMessage());
         }
@@ -237,7 +236,7 @@ public class BankRepository {
             preparedStatement.setInt(2,account.getBank().getId());
             preparedStatement.setInt(3,account.getPatron().getId());
             queryResult=preparedStatement.executeUpdate();
-            return queryResult>0?Result.SUCCESS:Result.FAILURE;
+            return Result.SUCCESS;
         }catch (SQLException e){
             System.out.println(e.getMessage());
         }
@@ -253,7 +252,7 @@ public class BankRepository {
             preparedStatement.setInt(2,account.getPatron().getId());
             preparedStatement.setInt(3,account.getId());
             queryResult=preparedStatement.executeUpdate();
-            return queryResult>0?Result.SUCCESS:Result.FAILURE;
+            return Result.SUCCESS;
         }catch (SQLException e){
             System.out.println(e.getMessage());
         }
